@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, ChevronDown, PhoneCall, Home, GraduationCap, Building2, Globe2, FileText, BookOpen, Contact, ChevronRight, ArrowRight, Info } from 'lucide-react';
+import { Menu, X, ChevronDown, PhoneCall, Home, GraduationCap, Building2, Globe2, FileText, BookOpen, Contact, ChevronRight, ArrowRight, Info, Search } from 'lucide-react';
 import { FaFacebook, FaXTwitter, FaInstagram, FaLinkedin, FaYoutube } from 'react-icons/fa6';
 import { motion, AnimatePresence } from 'framer-motion';
 

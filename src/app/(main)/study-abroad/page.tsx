@@ -1,7 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { Globe, Plane, FileText, CheckCircle2, ChevronRight, AlertTriangle, ShieldCheck, GraduationCap, MapPin, Send } from 'lucide-react';
+import { Globe, Plane, FileText, CheckCircle2, ChevronRight, AlertTriangle, ShieldCheck, GraduationCap, MapPin, Send, Building2 } from 'lucide-react';
 import { abroadCountries } from '@/lib/data';
 import Script from 'next/script';
 import { generateBreadcrumbSchema } from '@/lib/schemas';
