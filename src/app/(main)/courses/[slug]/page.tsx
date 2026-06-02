@@ -6,7 +6,7 @@ import Script from 'next/script';
 import { 
   ChevronRight, Clock, Award, BookOpen, FileText, 
   MapPin, Star, GraduationCap, DollarSign, ChevronDown, 
-  CheckCircle2, Send, ArrowRight
+  CheckCircle2, Send, ArrowRight, Building
 } from 'lucide-react';
 import { generateCourseSchema, generateFAQSchema, generateBreadcrumbSchema } from '@/lib/schemas';
 
