@@ -282,7 +282,7 @@ function HeroSection() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
-    }, 10000); // Change slide every 10 seconds
+    }, 7000); // Change slide every 7 seconds
     return () => clearInterval(timer);
   }, []);
 
