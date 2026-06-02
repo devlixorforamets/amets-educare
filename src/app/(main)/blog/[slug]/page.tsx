@@ -1,7 +1,8 @@
 import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { Calendar, Clock, User, ChevronRight, Share2, Facebook, Twitter, Linkedin, MessageSquare } from 'lucide-react';
+import { Calendar, Clock, User, ChevronRight, Share2, MessageSquare } from 'lucide-react';
+import { FaFacebook, FaXTwitter, FaLinkedin } from 'react-icons/fa6';
 import { blogPosts } from '@/lib/blog-data';
 import { generateBreadcrumbSchema } from '@/lib/schemas';
 import Script from 'next/script';
@@ -154,9 +155,9 @@ export default function BlogPostPage({ params }: Props) {
               <div className="mt-10 py-6 border-t border-b border-slate-100 flex items-center justify-between">
                 <span className="font-bold text-primary-900">Share this article:</span>
                 <div className="flex gap-3">
-                  <button className="w-10 h-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors"><Facebook className="w-4 h-4" /></button>
-                  <button className="w-10 h-10 rounded-full bg-sky-50 text-sky-500 flex items-center justify-center hover:bg-sky-500 hover:text-white transition-colors"><Twitter className="w-4 h-4" /></button>
-                  <button className="w-10 h-10 rounded-full bg-blue-50 text-blue-700 flex items-center justify-center hover:bg-blue-700 hover:text-white transition-colors"><Linkedin className="w-4 h-4" /></button>
+                  <button className="w-10 h-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors"><FaFacebook className="w-4 h-4" /></button>
+                  <button className="w-10 h-10 rounded-full bg-sky-50 text-sky-500 flex items-center justify-center hover:bg-sky-500 hover:text-white transition-colors"><FaXTwitter className="w-4 h-4" /></button>
+                  <button className="w-10 h-10 rounded-full bg-blue-50 text-blue-700 flex items-center justify-center hover:bg-blue-700 hover:text-white transition-colors"><FaLinkedin className="w-4 h-4" /></button>
                 </div>
               </div>
 
