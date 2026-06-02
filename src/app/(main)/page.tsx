@@ -2,11 +2,12 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, useInView, useAnimation, AnimatePresence } from 'framer-motion';
 import { 
   ArrowRight, Users, Building, FileCheck, Globe, 
   Quote, Star, ChevronDown, CheckCircle2, PhoneCall,
-  MapPin, Clock, ArrowUpRight
+  MapPin, Clock, ArrowUpRight, ShieldCheck
 } from 'lucide-react';
 import Script from 'next/script';
 import { generateFAQSchema, generateCourseSchema } from '@/lib/schemas';
@@ -393,6 +394,89 @@ function MarqueeSection() {
   );
 }
 
+function WhoWeAreSection() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  
+  return (
+    <section id="who-we-are" className="bg-white py-20 lg:py-28 overflow-hidden relative">
+      <div className="absolute top-0 right-0 w-96 h-96 bg-accent-500/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3"></div>
+      <div className="container-premium relative z-10" ref={ref}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="order-2 lg:order-1 relative rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(10,25,47,0.1)] group"
+          >
+            <div className="absolute inset-0 bg-gradient-to-tr from-primary-900/20 to-transparent mix-blend-multiply z-10 transition-opacity duration-500 group-hover:opacity-0"></div>
+            <Image 
+              src="/images/amets-educare-reena-thakur-counselling-session.jpg" 
+              alt="Reena Thakur, Director of Amets Educare, counseling medical and engineering aspirants for MBBS, BAMS, BHMS admissions in New Delhi, India" 
+              width={800} 
+              height={600} 
+              className="w-full h-auto object-cover scale-[1.02] group-hover:scale-105 transition-transform duration-700 ease-in-out"
+            />
+            <div className="absolute bottom-6 left-6 z-20 bg-white/95 backdrop-blur-md p-4 rounded-xl border border-white/40 shadow-xl flex items-center gap-4">
+              <div className="w-12 h-12 bg-accent-500 rounded-full flex items-center justify-center shrink-0">
+                <Quote className="w-6 h-6 text-primary-900" />
+              </div>
+              <div>
+                <p className="font-bold text-primary-900 text-sm">Reena Thakur</p>
+                <p className="text-slate-500 text-xs font-medium uppercase tracking-wider">Director, Amets Educare</p>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            className="order-1 lg:order-2 flex flex-col items-start"
+          >
+            <span className="text-accent-500 font-bold tracking-wider uppercase text-sm mb-3 flex items-center gap-2">
+              <span className="w-8 h-0.5 bg-accent-500 inline-block"></span> Who We Are
+            </span>
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-primary-900 leading-tight mb-6">
+              India's Most Trusted <br className="hidden sm:block"/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-900">Education Consultants</span>
+            </h2>
+            <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-6">
+              Amets Educare is a premier educational consultancy based in New Delhi, India. With over 15 years of industry excellence, we specialize in providing transparent and highly successful admission guidance for prestigious medical, engineering, and professional courses.
+            </p>
+            <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-8">
+              Under the visionary leadership of <strong>Reena Thakur</strong>, our expert team has consistently helped thousands of students secure placements in top <strong>MBBS, BAMS, BHMS, BUMS, and B.Tech</strong> institutions across India and globally. We don't just offer admissions; we engineer successful careers.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-4 w-full sm:w-auto">
+              <div className="flex items-center gap-3 bg-slate-50 border border-slate-100 p-4 rounded-xl flex-1 hover:shadow-md transition-shadow">
+                <CheckCircle2 className="w-8 h-8 text-accent-500 shrink-0" />
+                <div>
+                  <h4 className="font-bold text-primary-900 text-sm">100% Transparent</h4>
+                  <p className="text-xs text-slate-500 mt-1">Ethical Guidance</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 bg-slate-50 border border-slate-100 p-4 rounded-xl flex-1 hover:shadow-md transition-shadow">
+                <Globe className="w-8 h-8 text-accent-500 shrink-0" />
+                <div>
+                  <h4 className="font-bold text-primary-900 text-sm">Global Reach</h4>
+                  <p className="text-xs text-slate-500 mt-1">35+ Countries</p>
+                </div>
+              </div>
+            </div>
+
+            <Link href="/about-us" className="mt-10 inline-flex items-center justify-center gap-2 bg-primary-900 text-white font-bold px-8 py-4 rounded-full hover:bg-primary-800 transition-colors shadow-lg hover:shadow-xl hover:-translate-y-1">
+              Read Our Full Story <ArrowRight className="w-4 h-4" />
+            </Link>
+          </motion.div>
+
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function WhyAmetsSection() {
   return (
     <section id="why-us" className="bg-slate-50 section-padding">
@@ -771,6 +855,7 @@ export default function HomePage() {
     <main className="flex flex-col min-h-screen">
       <HeroSection />
       <MarqueeSection />
+      <WhoWeAreSection />
       <WhyAmetsSection />
       <FeaturedCoursesSection />
       <StudyAbroadSection />
