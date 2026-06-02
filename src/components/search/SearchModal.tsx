@@ -4,13 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { Search, X, Building2, GraduationCap, FileText, ChevronRight, Clock } from 'lucide-react';
 
-interface SearchResult {
-  type: 'college' | 'course' | 'blog';
-  title: string;
-  url: string;
-  excerpt: string;
-  meta: string;
-}
+import { performSearch, SearchResult } from '@/lib/search';
 
 interface SearchModalProps {
   isOpen: boolean;
@@ -66,12 +60,11 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
       return;
     }
 
-    const fetchResults = async () => {
+    const fetchResults = () => {
       setIsSearching(true);
       try {
-        const res = await fetch(`/api/search?q=${encodeURIComponent(query)}`);
-        const data = await res.json();
-        setResults(data.results.slice(0, 8)); // Limit to 8 in modal
+        const data = performSearch(query);
+        setResults(data.slice(0, 8)); // Limit to 8 in modal
       } catch (error) {
         console.error("Search failed:", error);
       } finally {

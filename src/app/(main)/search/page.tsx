@@ -4,6 +4,7 @@ import React, { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { Search, Building2, GraduationCap, FileText, ChevronRight, AlertCircle } from 'lucide-react';
+import { performSearch } from '@/lib/search';
 
 // Wrapper to handle useSearchParams safely
 export default function SearchResultsPage() {
@@ -23,7 +24,7 @@ function SearchResultsContent() {
   const [activeFilter, setActiveFilter] = useState<'all' | 'college' | 'course' | 'blog'>('all');
 
   useEffect(() => {
-    const fetchResults = async () => {
+    const fetchResults = () => {
       setIsLoading(true);
       if (!query.trim()) {
         setResults([]);
@@ -32,9 +33,8 @@ function SearchResultsContent() {
       }
 
       try {
-        const res = await fetch(`/api/search?q=${encodeURIComponent(query)}`);
-        const data = await res.json();
-        setResults(data.results);
+        const data = performSearch(query);
+        setResults(data);
       } catch (error) {
         console.error("Search failed:", error);
       } finally {
