@@ -37,7 +37,7 @@ export interface CollegeData {
   description: string;
   url: string;
   logo: string;
-  image: string;
+  image?: string;
   address: {
     streetAddress?: string;
     addressLocality: string;
@@ -45,6 +45,12 @@ export interface CollegeData {
     postalCode?: string;
     addressCountry: string; // ISO 3166-1 alpha-2 code, e.g., "IN"
   };
+  contactPoint?: {
+    telephone?: string;
+    email?: string;
+    contactType?: string;
+  };
+  sameAs?: string[];
   foundingDate?: string;
   alumni?: string[];
   aggregateRating?: AggregateRating;
@@ -197,7 +203,6 @@ export function generateCollegeSchema(college: CollegeData) {
     description: college.description,
     url: college.url,
     logo: college.logo,
-    image: college.image,
     address: {
       '@type': 'PostalAddress',
       streetAddress: college.address.streetAddress,
@@ -207,6 +212,23 @@ export function generateCollegeSchema(college: CollegeData) {
       addressCountry: college.address.addressCountry,
     },
   };
+
+  if (college.image) {
+    schema.image = college.image;
+  }
+
+  if (college.contactPoint) {
+    schema.contactPoint = {
+      '@type': 'ContactPoint',
+      telephone: college.contactPoint.telephone,
+      email: college.contactPoint.email,
+      contactType: college.contactPoint.contactType || 'Admissions',
+    };
+  }
+
+  if (college.sameAs && college.sameAs.length > 0) {
+    schema.sameAs = college.sameAs;
+  }
 
   if (college.foundingDate) {
     schema.foundingDate = college.foundingDate;
