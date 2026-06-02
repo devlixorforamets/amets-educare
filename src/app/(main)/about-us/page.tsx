@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Metadata } from 'next';
+import Link from 'next/link';
 import Script from 'next/script';
 import { generateOrganizationSchema, generateLocalBusinessSchema, generateBreadcrumbSchema } from '@/lib/schemas';
 import { Award, ShieldCheck, Trophy, Users, Star, Target, MapPin, CheckCircle2, Building, Briefcase, Globe2, TrendingUp, HeartHandshake, Compass, Rocket, Gem, CheckCircle, GraduationCap, PhoneCall } from 'lucide-react';
