@@ -11,8 +11,8 @@ export async function generateStaticParams() {
   
   colleges.forEach(college => {
     params.push({
-      state: college.state.toLowerCase().replace(/\s+/g, '-'),
-      city: college.city.toLowerCase().replace(/\s+/g, '-'),
+      state: (college.state || 'unknown-state').toLowerCase().replace(/\s+/g, '-'),
+      city: (college.city || 'unknown-city').toLowerCase().replace(/\s+/g, '-'),
       college: college.slug
     });
   });
@@ -21,23 +21,25 @@ export async function generateStaticParams() {
 }
 
 type Props = {
-  params: { state: string, city: string, college: string }
+  params: Promise<{ state: string, city: string, college: string }>
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const college = colleges.find(c => c.slug === params.college);
-  const name = college?.name || params.college.replace(/-/g, ' ');
+  const resolvedParams = await params;
+  const college = colleges.find(c => c.slug === resolvedParams.college);
+  const name = college?.name || resolvedParams.college.replace(/-/g, ' ');
   return {
     title: `${name} Admission 2026, Fees, Courses & Rating | Amets Educare`,
     description: `Get complete admission details for ${name}. View fee structure, courses offered, campus facilities, and direct admission guidelines.`,
   };
 }
 
-export default function CollegeDetailPage({ params }: Props) {
-  const college = colleges.find(c => c.slug === params.college) || {
-    name: params.college.replace(/-/g, ' '),
-    state: params.state,
-    city: params.city,
+export default async function CollegeDetailPage({ params }: Props) {
+  const resolvedParams = await params;
+  const college = colleges.find(c => c.slug === resolvedParams.college) || {
+    name: resolvedParams.college.replace(/-/g, ' '),
+    state: resolvedParams.state,
+    city: resolvedParams.city,
     courses: ['MBBS', 'BDS', 'B.Tech'],
     type: 'Private',
     established: 2000,
@@ -45,14 +47,14 @@ export default function CollegeDetailPage({ params }: Props) {
     annualFee: 'Varies',
     recognition: 'Approved',
     hostel: true,
-    slug: params.college
+    slug: resolvedParams.college
   };
 
   const breadcrumbs = [
     { name: 'Home', url: 'https://ametseducare.com' },
     { name: 'Colleges', url: 'https://ametseducare.com/colleges-universities' },
-    { name: college.state, url: `https://ametseducare.com/colleges-universities/${params.state}` },
-    { name: college.name, url: `https://ametseducare.com/colleges-universities/${params.state}/${params.city}/${params.college}` }
+    { name: college.state, url: `https://ametseducare.com/colleges-universities/${resolvedParams.state}` },
+    { name: college.name, url: `https://ametseducare.com/colleges-universities/${resolvedParams.state}/${resolvedParams.city}/${resolvedParams.college}` }
   ];
 
   return (
@@ -61,7 +63,7 @@ export default function CollegeDetailPage({ params }: Props) {
       <Script id="schema-college" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateCollegeSchema({
         name: college.name,
         description: `Premier educational institution located in ${college.city}, ${college.state}.`,
-        url: `https://ametseducare.com/colleges-universities/${params.state}/${params.city}/${params.college}`,
+        url: `https://ametseducare.com/colleges-universities/${resolvedParams.state}/${resolvedParams.city}/${resolvedParams.college}`,
         logo: "https://ametseducare.com/logo.png",
         address: { streetAddress: "Campus Road", addressLocality: college.city, addressRegion: college.state, addressCountry: "IN" },
         contactPoint: { telephone: "+91-9876543210", email: "admissions@ametseducare.com" },
@@ -76,7 +78,7 @@ export default function CollegeDetailPage({ params }: Props) {
             <ChevronRight className="w-4 h-4 shrink-0" />
             <Link href="/colleges-universities" className="hover:text-accent-500 transition-colors">Colleges</Link>
             <ChevronRight className="w-4 h-4 shrink-0" />
-            <Link href={`/colleges-universities/${params.state}`} className="hover:text-accent-500 transition-colors capitalize">{params.state.replace(/-/g, ' ')}</Link>
+            <Link href={`/colleges-universities/${resolvedParams.state}`} className="hover:text-accent-500 transition-colors capitalize">{resolvedParams.state.replace(/-/g, ' ')}</Link>
             <ChevronRight className="w-4 h-4 shrink-0" />
             <span className="text-primary-900 truncate max-w-[200px] sm:max-w-xs">{college.name}</span>
           </nav>

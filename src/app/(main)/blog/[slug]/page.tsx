@@ -14,11 +14,12 @@ export async function generateStaticParams() {
 }
 
 type Props = {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = blogPosts.find(p => p.slug === params.slug);
+  const resolvedParams = await params;
+  const post = blogPosts.find(p => p.slug === resolvedParams.slug);
   if (!post) return { title: 'Not Found' };
   
   return {
@@ -69,8 +70,9 @@ function extractHeadings(md: string) {
   return headings;
 }
 
-export default function BlogPostPage({ params }: Props) {
-  const post = blogPosts.find(p => p.slug === params.slug) || blogPosts[0];
+export default async function BlogPostPage({ params }: Props) {
+  const resolvedParams = await params;
+  const post = blogPosts.find(p => p.slug === resolvedParams.slug) || blogPosts[0];
   const relatedPosts = blogPosts.filter(p => p.slug !== post.slug && p.category === post.category).slice(0, 3);
   
   if (relatedPosts.length < 3) {

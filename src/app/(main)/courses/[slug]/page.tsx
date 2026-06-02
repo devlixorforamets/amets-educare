@@ -389,17 +389,18 @@ export function CourseDetailTemplate({ course }: CoursePageProps) {
 
 // --- DYNAMIC PAGE EXPORT ---
 // In a real app, this data would be fetched based on the slug.
-export default function CoursePage({ params }: { params: { slug: string } }) {
+export default function CoursePage({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = React.use(params);
   // Mock Data generation based on slug
   const mockCourse: CoursePageProps['course'] = {
-    name: params.slug.toUpperCase(),
-    slug: params.slug,
+    name: resolvedParams.slug.toUpperCase(),
+    slug: resolvedParams.slug,
     category: "Medical & Healthcare",
     duration: "5.5 Years",
     eligibility: "10+2 PCB with 50%, Valid NEET Score",
     degree: "Undergraduate Professional Degree",
     entranceExam: "NEET UG",
-    description: `The ${params.slug.toUpperCase()} program is designed to create competent medical professionals. It involves rigorous academic study combined with extensive clinical rotations. Amets Educare specializes in securing management quota and merit seats in top institutions for this program.`,
+    description: `The ${resolvedParams.slug.toUpperCase()} program is designed to create competent medical professionals. It involves rigorous academic study combined with extensive clinical rotations. Amets Educare specializes in securing management quota and merit seats in top institutions for this program.`,
     syllabus: [
       "First Year: Anatomy, Physiology, Biochemistry",
       "Second Year: Pathology, Microbiology, Pharmacology",
@@ -420,11 +421,11 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
       { name: "B.Sc Nursing", slug: "nursing", desc: "Bachelor of Science in Nursing" }
     ],
     faqs: [
-      { question: `What is the NEET cutoff for ${params.slug.toUpperCase()} in private colleges?`, answer: "The cutoff varies yearly, but generally, a score of 300+ is required for good private colleges through management quota." },
+      { question: `What is the NEET cutoff for ${resolvedParams.slug.toUpperCase()} in private colleges?`, answer: "The cutoff varies yearly, but generally, a score of 300+ is required for good private colleges through management quota." },
       { question: "Can Amets Educare help with education loans?", answer: "Yes, we provide complete documentation support to help you secure education loans from our banking partners." }
     ],
-    metaTitle: `${params.slug.toUpperCase()} Admission 2026 | Amets Educare`,
-    metaDescription: `Complete guide for ${params.slug.toUpperCase()} admission. Get details on eligibility, fees, syllabus, and top colleges. Connect with Reena Thakur for expert guidance.`
+    metaTitle: `${resolvedParams.slug.toUpperCase()} Admission 2026 | Amets Educare`,
+    metaDescription: `Complete guide for ${resolvedParams.slug.toUpperCase()} admission. Get details on eligibility, fees, syllabus, and top colleges. Connect with Reena Thakur for expert guidance.`
   };
 
   return <CourseDetailTemplate course={mockCourse} />;

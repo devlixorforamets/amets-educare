@@ -13,23 +13,25 @@ export async function generateStaticParams() {
 }
 
 type Props = {
-  params: { state: string }
+  params: Promise<{ state: string }>
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const stateData = states.find(s => s.slug === params.state);
-  const stateName = stateData?.name || params.state;
+  const resolvedParams = await params;
+  const stateData = states.find(s => s.slug === resolvedParams.state);
+  const stateName = stateData?.name || resolvedParams.state;
   return {
     title: `${stateName} Medical & Professional Colleges | Amets Educare`,
     description: `Explore the top colleges in ${stateName}. Find admission details, fee structures, and placement records for MBBS, B.Tech, MBA, and more.`,
   };
 }
 
-export default function StateCollegesPage({ params }: Props) {
-  const stateData = states.find(s => s.slug === params.state) || { name: params.state, slug: params.state, capital: '', popularCities: [] };
+export default async function StateCollegesPage({ params }: Props) {
+  const resolvedParams = await params;
+  const stateData = states.find(s => s.slug === resolvedParams.state) || { name: resolvedParams.state, slug: resolvedParams.state, capital: '', popularCities: [] };
   
   // Filter colleges for this state
-  const stateColleges = colleges.filter(c => c.state.toLowerCase().replace(/\s+/g, '-') === params.state);
+  const stateColleges = colleges.filter(c => c.state.toLowerCase().replace(/\s+/g, '-') === resolvedParams.state);
   
   // Provide mock data if state has no colleges in our small dataset
   const displayColleges = stateColleges.length > 0 ? stateColleges : colleges.slice(0, 8).map(c => ({...c, state: stateData.name}));
@@ -37,7 +39,7 @@ export default function StateCollegesPage({ params }: Props) {
   const breadcrumbs = [
     { name: 'Home', url: 'https://ametseducare.com' },
     { name: 'Colleges', url: 'https://ametseducare.com/colleges-universities' },
-    { name: stateData.name, url: `https://ametseducare.com/colleges-universities/${params.state}` }
+    { name: stateData.name, url: `https://ametseducare.com/colleges-universities/${resolvedParams.state}` }
   ];
 
   // ItemList Schema
@@ -48,7 +50,7 @@ export default function StateCollegesPage({ params }: Props) {
     "itemListElement": displayColleges.map((c, i) => ({
       "@type": "ListItem",
       "position": i + 1,
-      "url": `https://ametseducare.com/colleges-universities/${params.state}/${c.city.toLowerCase().replace(/\s+/g, '-')}/${c.slug}`
+      "url": `https://ametseducare.com/colleges-universities/${resolvedParams.state}/${(c.city || '').toLowerCase().replace(/\s+/g, '-')}/${c.slug}`
     }))
   };
 
@@ -140,7 +142,7 @@ export default function StateCollegesPage({ params }: Props) {
                         </div>
                       </div>
                       <Link 
-                        href={`/colleges-universities/${params.state}/${college.city.toLowerCase().replace(/\s+/g, '-')}/${college.slug}`}
+                        href={`/colleges-universities/${resolvedParams.state}/${(college.city || '').toLowerCase().replace(/\s+/g, '-')}/${college.slug}`}
                         className="bg-primary-50 text-primary-900 hover:bg-primary-900 hover:text-white font-bold px-6 py-2.5 rounded-lg transition-colors border border-primary-100 whitespace-nowrap text-sm"
                       >
                         View Details
@@ -168,7 +170,7 @@ export default function StateCollegesPage({ params }: Props) {
               <p className="text-sm text-slate-600 mb-4 leading-relaxed">
                 Admissions to professional courses in {stateData.name} are primarily conducted through centralized state counselling (e.g., KEA, CET Cell) based on NEET/JEE ranks.
               </p>
-              <Link href={`/admissions/${params.state}`} className="text-sm font-bold text-accent-600 hover:text-primary-900 flex items-center group">
+              <Link href={`/admissions/${resolvedParams.state}`} className="text-sm font-bold text-accent-600 hover:text-primary-900 flex items-center group">
                 Read State Guidelines <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>

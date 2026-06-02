@@ -117,42 +117,43 @@ export default function AboutUsPage() {
       <Script id="schema-breadcrumbs" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs)) }} />
 
       {/* Hero Section */}
-      <section className="relative pt-36 pb-32 lg:pt-56 lg:pb-48 bg-primary-950 text-white overflow-hidden border-b-4 border-accent-500">
+      <section className="relative pt-40 pb-36 lg:pt-60 lg:pb-56 bg-primary-950 text-white overflow-hidden border-b-4 border-accent-500">
         <div className="absolute inset-0 z-0">
-          {/* NEW HERO IMAGE: Eye-catchy global students/campus */}
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-30 mix-blend-overlay"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-primary-950/80 via-primary-950/60 to-primary-950"></div>
+          {/* SEO Optimised Eye-catchy image */}
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-40 mix-blend-luminosity"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-primary-950 via-primary-950/80 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-primary-950/90 to-transparent"></div>
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent-500/20 rounded-full blur-[150px] mix-blend-screen translate-x-1/3 -translate-y-1/3"></div>
           <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[120px] mix-blend-screen -translate-x-1/2 translate-y-1/2"></div>
         </div>
         
-        <div className="container-premium relative z-10 text-center max-w-5xl mx-auto">
+        <div className="container-premium relative z-10 text-left max-w-6xl mx-auto flex flex-col md:items-start items-center md:text-left text-center">
           {/* Trust Badges */}
-          <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 mb-8">
             <span className="text-accent-400 font-bold uppercase tracking-widest text-xs md:text-sm bg-primary-900/80 px-4 py-2 rounded-full border border-accent-500/30 shadow-2xl backdrop-blur-md flex items-center gap-2">
-              <Star className="w-4 h-4 text-accent-500 fill-accent-500" /> Top Rated Consultancy
+              <Star className="w-4 h-4 text-accent-500 fill-accent-500" /> Top Rated Educational Consultancy
             </span>
             <span className="text-white font-bold uppercase tracking-widest text-xs md:text-sm bg-white/10 px-4 py-2 rounded-full border border-white/20 shadow-2xl backdrop-blur-md flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-green-400" /> Govt. Approved & Trusted
+              <ShieldCheck className="w-4 h-4 text-green-400" /> Govt. Approved & NMC Recognized Partners
             </span>
           </div>
 
-          <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl font-extrabold text-white leading-tight mb-8 drop-shadow-2xl">
-            India's Most Trusted <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-300 via-accent-400 to-accent-500 drop-shadow-lg">Study Abroad</span> & Medical Experts
+          <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl font-extrabold text-white leading-[1.1] mb-8 drop-shadow-2xl">
+            Empowering Your Global <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-300 via-accent-400 to-accent-500 drop-shadow-lg">Medical & Engineering</span> Careers
           </h1>
           
-          <h2 className="text-slate-200 text-lg md:text-2xl font-light leading-relaxed max-w-3xl mx-auto mb-10 drop-shadow-md">
-            Amets Educare is your premier partner for global education. We guide ambitious students to world-class MBBS and Engineering universities with a 100% transparent admission process.
+          <h2 className="text-slate-200 text-lg md:text-2xl font-light leading-relaxed max-w-3xl mb-10 drop-shadow-md">
+            Amets Educare is India's premier study abroad consultancy. With a 100% transparent admission process, we have successfully guided over 15,000 students to world-class MBBS and Engineering universities across 35+ countries. Let us build your future, together.
           </h2>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="/contact-us" className="w-full sm:w-auto bg-accent-500 text-primary-950 font-black uppercase tracking-widest text-sm px-10 py-4 rounded-full hover:bg-white transition-all shadow-[0_0_30px_rgba(250,204,21,0.3)] hover:shadow-[0_0_50px_rgba(255,255,255,0.5)] hover:-translate-y-1 flex items-center justify-center gap-2">
+          <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+            <Link href="/contact-us" className="w-full sm:w-auto bg-accent-500 text-primary-950 font-black uppercase tracking-widest text-sm px-10 py-4 rounded-full hover:bg-white transition-all shadow-[0_0_30px_rgba(250,204,21,0.3)] hover:shadow-[0_0_50px_rgba(255,255,255,0.5)] hover:-translate-y-1 flex items-center justify-center gap-2">
               <PhoneCall className="w-4 h-4" /> Book Free Counselling
-            </a>
-            <a href="/colleges" className="w-full sm:w-auto bg-primary-800 text-white border border-primary-700 font-bold uppercase tracking-widest text-sm px-10 py-4 rounded-full hover:bg-primary-700 transition-all hover:-translate-y-1 flex items-center justify-center gap-2">
+            </Link>
+            <Link href="/colleges-universities" className="w-full sm:w-auto bg-primary-800 text-white border border-primary-700 font-bold uppercase tracking-widest text-sm px-10 py-4 rounded-full hover:bg-primary-700 transition-all hover:-translate-y-1 flex items-center justify-center gap-2">
               <Globe2 className="w-4 h-4" /> Explore Universities
-            </a>
+            </Link>
           </div>
         </div>
       </section>

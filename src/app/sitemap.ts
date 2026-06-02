@@ -2,6 +2,8 @@ import { MetadataRoute } from 'next';
 import { courses, colleges, states, abroadCountries } from '@/lib/data';
 import { blogPosts } from '@/lib/blog-data';
 
+export const dynamic = 'force-static';
+
 const SITE_URL = 'https://ametseducare.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {

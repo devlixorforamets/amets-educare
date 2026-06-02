@@ -13,20 +13,22 @@ export async function generateStaticParams() {
 }
 
 type Props = {
-  params: { country: string }
+  params: Promise<{ country: string }>
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const countryData = abroadCountries.find(c => c.slug === params.country);
-  const name = countryData?.name || params.country;
+  const resolvedParams = await params;
+  const countryData = abroadCountries.find(c => c.slug === resolvedParams.country);
+  const name = countryData?.name || resolvedParams.country;
   return {
     title: `Study MBBS in ${name} 2026 | Fees & Top Medical Universities`,
     description: `Complete guide for Indian students to study MBBS in ${name}. Explore top NMC approved universities, detailed fee structures, climate, and direct admission processes.`,
   };
 }
 
-export default function CountryDetailPage({ params }: Props) {
-  const country = abroadCountries.find(c => c.slug === params.country) || abroadCountries[0];
+export default async function CountryDetailPage({ params }: Props) {
+  const resolvedParams = await params;
+  const country = abroadCountries.find(c => c.slug === resolvedParams.country) || abroadCountries[0];
 
   const breadcrumbs = [
     { name: 'Home', url: 'https://ametseducare.com' },
