@@ -159,7 +159,7 @@ const FAQS = [
   },
   {
     question: "How do I book a counselling session with Reena Thakur?",
-    answer: "You can book a free initial consultation by filling out the contact form on our website or calling our helpline at +91-XXXXXXXXXX."
+    answer: "You can book a free initial consultation by filling out the contact form on our website or calling our helpline at +91-9354679830."
   }
 ];
 
@@ -755,8 +755,8 @@ function FinalCTASection() {
           <Link href="/contact-us" className="bg-accent-500 text-primary-900 font-bold text-base sm:text-lg px-8 sm:px-10 py-4 sm:py-5 rounded-full hover:bg-accent-400 hover:shadow-gold transition-all duration-300 w-full sm:w-auto">
             Schedule Free Counselling
           </Link>
-          <a href="tel:+919876543210" className="text-accent-400 font-semibold flex items-center justify-center hover:text-white transition-colors gap-2">
-            <PhoneCall className="w-5 h-5" /> Or call us: +91-98765 43210
+          <a href="tel:+919354679830" className="text-accent-400 font-semibold flex items-center justify-center hover:text-white transition-colors gap-2">
+            <PhoneCall className="w-5 h-5" /> Or call us: +91-9354679830
           </a>
         </div>
       </div>

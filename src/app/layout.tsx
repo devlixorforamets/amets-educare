@@ -121,13 +121,15 @@ export default function RootLayout({
     image: 'https://ametseducare.com/logo.png',
     '@id': 'https://ametseducare.com',
     url: 'https://ametseducare.com',
-    telephone: '+91-XXXXXXXXXX', // Update with real phone number
+    telephone: '+91-9354679830', // Update with real phone number
     email: 'info@ametseducare.com',
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'IN',
-      addressLocality: 'New Delhi', // Update with actual locality
+      addressLocality: 'Janakpuri', // Update with actual locality
       addressRegion: 'Delhi', // Update with actual region
+      postalCode: '110058',
+      streetAddress: 'OFFICE NUMBER 505, DDA-5, near MCDONALDS, Janakpuri District Center',
     },
     geo: {
       '@type': 'GeoCoordinates',

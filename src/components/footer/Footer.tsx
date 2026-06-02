@@ -156,14 +156,14 @@ export default function Footer() {
                 <li className="flex items-start">
                   <MapPin className="w-5 h-5 text-accent-500 mr-4 shrink-0 mt-0.5" />
                   <span className="text-sm text-slate-400 leading-relaxed">
-                    123 Education Plaza, Knowledge Park<br />
-                    New Delhi, India 110001
+                    OFFICE NUMBER 505, DDA-5, near MCDONALDS,<br />
+                    Janakpuri District Center, Janakpuri, Delhi, 110058
                   </span>
                 </li>
                 <li className="flex items-center">
                   <PhoneCall className="w-5 h-5 text-accent-500 mr-4 shrink-0" />
-                  <a href="tel:+919876543210" className="text-sm text-slate-400 hover:text-white transition-colors">
-                    +91 98765 43210
+                  <a href="tel:+919354679830" className="text-sm text-slate-400 hover:text-white transition-colors">
+                    +91-9354679830
                   </a>
                 </li>
                 <li className="flex items-center">
