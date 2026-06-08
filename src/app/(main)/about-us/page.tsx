@@ -248,11 +248,11 @@ export default function AboutUsPage() {
                       <MapPin className="w-5 h-5 text-accent-400" />
                     </div>
                     <div>
-                      <span className="block text-xs text-slate-400 uppercase tracking-widest font-bold mb-1.5">Headquarters</span>
+                      <span className="block text-xs text-slate-400 uppercase tracking-widest font-bold mb-1.5">Office Address</span>
                       <span className="font-medium text-slate-300 text-sm leading-loose block">
-                        OLD H NO.-9/23, NEW H. NO.-S-113, <br/>
-                        GALI NO.-9, VIKAS NAGAR, UTTAM NAGAR,<br />
-                        NEW DELHI, Delhi, India - 110059
+                        108, Vishwasadan Building, Near Inox Cinemas,<br/>
+                        Janakpuri District Center, Janakpuri,<br />
+                        Delhi, 110058
                       </span>
                     </div>
                   </li>
@@ -345,7 +345,7 @@ export default function AboutUsPage() {
                 <Image src="/images/reena.jpg" alt="Reena Thakur" width={128} height={128} className="w-full h-full object-cover object-top" />
               </div>
               <h3 className="font-serif text-3xl font-bold text-primary-900 mb-2 group-hover:text-white transition-colors duration-500 relative z-10">Reena Thakur</h3>
-              <p className="text-accent-600 font-bold text-sm uppercase tracking-widest mb-6 relative z-10">Managing Director</p>
+              <p className="text-accent-600 font-bold text-sm uppercase tracking-widest mb-6 relative z-10">Founder & Director</p>
               <div className="inline-flex items-center gap-2 bg-slate-50 group-hover:bg-primary-900 border border-slate-200 group-hover:border-primary-700 px-5 py-2 rounded-lg text-sm font-bold text-slate-700 group-hover:text-accent-400 shadow-sm font-mono mb-6 transition-colors duration-500 relative z-10 tracking-widest">
                 <ShieldCheck className="w-4 h-4" /> DIN: 08296797
               </div>

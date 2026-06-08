@@ -156,7 +156,7 @@ export default function Footer() {
                 <li className="flex items-start">
                   <MapPin className="w-5 h-5 text-accent-500 mr-4 shrink-0 mt-0.5" />
                   <span className="text-sm text-slate-400 leading-relaxed">
-                    OFFICE NUMBER 505, DDA-5, near MCDONALDS,<br />
+                    108, Vishwasadan Building, Near Inox Cinemas,<br />
                     Janakpuri District Center, Janakpuri, Delhi, 110058
                   </span>
                 </li>

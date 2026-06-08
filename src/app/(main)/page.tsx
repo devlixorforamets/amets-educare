@@ -32,23 +32,27 @@ const MARQUEE_ITEMS = ['MBBS', 'MS/MD', 'BDS', 'BAMS', 'BHMS', 'BUMS', 'BVSC', '
 const WHY_US_FEATURES = [
   {
     icon: Users,
-    title: "Expert Counselling",
-    desc: "Personalized guidance from Reena Thakur and team with 15+ years experience"
+    title: "Elite Counselling",
+    desc: "Data-backed guidance from Reena Thakur & our expert core team.",
+    keywords: []
   },
   {
     icon: Building,
-    title: "Top College Network",
-    desc: "Direct connections with 100+ medical, engineering and management institutions"
+    title: "Global Network",
+    desc: "Direct tie-ups with 100+ premier NMC & WHO recognized universities.",
+    keywords: []
   },
   {
-    icon: FileCheck,
-    title: "Admission Assurance",
-    desc: "End-to-end support from application to seat confirmation including documentation"
+    icon: ShieldCheck,
+    title: "100% Assurance",
+    desc: "Transparent, end-to-end process with guaranteed placement.",
+    keywords: []
   },
   {
     icon: Globe,
-    title: "Global Opportunities",
-    desc: "MBBS and higher education options in Russia, Ukraine, Philippines, Georgia & more"
+    title: "Pan-India Reach",
+    desc: "Empowering students from 28+ states to secure global opportunities.",
+    keywords: []
   }
 ];
 
@@ -104,9 +108,10 @@ const FEATURED_COURSES = [
 ];
 
 const METRICS = [
-  { label: "Students Admitted", value: 5000, suffix: "+" },
+  { label: "Students Admitted", value: 15000, suffix: "+" },
   { label: "Partner Colleges", value: 100, suffix: "+" },
   { label: "States Covered", value: 28, suffix: "+" },
+  { label: "Countries Existence", value: 30, suffix: "+" },
   { label: "Years of Excellence", value: 15, suffix: "+" }
 ];
 
@@ -424,7 +429,7 @@ function WhoWeAreSection() {
               </div>
               <div>
                 <p className="font-bold text-primary-900 text-sm">Reena Thakur</p>
-                <p className="text-slate-500 text-xs font-medium uppercase tracking-wider">Director, Amets Educare</p>
+                <p className="text-slate-500 text-xs font-medium uppercase tracking-wider">Founder & Director, Amets Educare</p>
               </div>
             </div>
           </motion.div>
@@ -479,32 +484,104 @@ function WhoWeAreSection() {
 
 function WhyAmetsSection() {
   return (
-    <section id="why-us" className="bg-slate-50 section-padding">
-      <div className="container-premium">
-        <SectionHeader eyebrow="Why Choose Us" title="Guiding Your Educational Journey with Excellence" />
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {WHY_US_FEATURES.map((feature, idx) => {
-            const Icon = feature.icon;
-            return (
-              <motion.div 
-                key={idx}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="glass-card p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300"
-              >
-                <div className="w-14 h-14 rounded-full bg-accent-500/20 flex items-center justify-center mb-6">
-                  <Icon className="w-7 h-7 text-accent-600" />
-                </div>
-                <h3 className="text-xl font-bold text-primary-900 mb-3">{feature.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{feature.desc}</p>
-              </motion.div>
-            );
-          })}
-        </div>
-      </div>
+    <section id="why-us" className="bg-white section-padding relative overflow-hidden">
+       {/* Background Decorative Slice */}
+       <div className="absolute top-0 right-0 w-full lg:w-1/2 h-full bg-slate-50 -skew-x-12 transform origin-top-right z-0"></div>
+
+       <div className="container-premium relative z-10">
+         <div className="text-center max-w-3xl mx-auto mb-16">
+           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 border border-slate-200 mb-4">
+             <span className="w-2 h-2 rounded-full bg-accent-500"></span>
+             <span className="text-primary-900 font-bold uppercase tracking-widest text-xs">Why Choose Us</span>
+           </div>
+           <h2 className="font-serif text-4xl lg:text-5xl font-bold text-primary-900 mb-6">The Amets Advantage</h2>
+           <p className="text-slate-500 text-lg">We provide an elite, data-driven framework to ensure your admission into the world's most prestigious universities.</p>
+         </div>
+
+         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+            {/* Left Image / Art Graphic */}
+            <div className="w-full lg:w-1/2 relative">
+               <div className="absolute -inset-4 bg-gradient-to-tr from-accent-400/30 to-primary-600/30 rounded-[2.5rem] blur-2xl -z-10"></div>
+               <div className="relative rounded-3xl overflow-hidden shadow-2xl group">
+                 <Image 
+                   src="/images/reena-thakur-gniot-felicitation.jpg" 
+                   alt="reena-thakur-gniot-felicitation.jpg" 
+                   width={800} 
+                   height={600} 
+                   className="w-full h-[500px] object-cover group-hover:scale-105 transition-transform duration-700" 
+                 />
+                 <div className="absolute inset-0 bg-primary-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
+                 
+                 {/* Floating animated badge */}
+                 <motion.div 
+                   initial={{ y: 20, opacity: 0 }}
+                   whileInView={{ y: 0, opacity: 1 }}
+                   viewport={{ once: true }}
+                   animate={{ y: [0, -10, 0] }}
+                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                   className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-white/50"
+                 >
+                    <div className="flex items-center gap-4">
+                       <div className="w-14 h-14 bg-accent-100 rounded-full flex items-center justify-center text-accent-600 font-bold text-2xl">
+                         15+
+                       </div>
+                       <div>
+                         <p className="text-sm font-bold text-primary-900 uppercase tracking-wide">Years of</p>
+                         <p className="text-xs text-slate-500 font-medium">Excellence</p>
+                       </div>
+                    </div>
+                 </motion.div>
+               </div>
+            </div>
+
+            {/* Right 2x2 Grid - Short & Punchy */}
+            <div className="w-full lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {WHY_US_FEATURES.map((feature, idx) => {
+                 const Icon = feature.icon;
+                 return (
+                   <motion.div 
+                     key={idx}
+                     initial={{ opacity: 0, y: 30 }}
+                     whileInView={{ opacity: 1, y: 0 }}
+                     viewport={{ once: true, margin: "-50px" }}
+                     transition={{ duration: 0.5, delay: idx * 0.1 }}
+                     className="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 relative overflow-hidden group hover:-translate-y-1 cursor-default"
+                   >
+                      <div className="absolute -right-6 -bottom-6 w-32 h-32 bg-slate-50 rounded-full z-0 group-hover:bg-accent-50 transition-colors duration-500"></div>
+                      <Icon className="absolute -right-2 -bottom-2 w-20 h-20 text-slate-100/50 z-0 group-hover:text-accent-200/50 transition-colors duration-500 group-hover:-rotate-12 group-hover:scale-110" />
+                      
+                      <div className="relative z-10">
+                        <div className="w-14 h-14 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center mb-5 group-hover:bg-primary-600 group-hover:text-white transition-colors duration-300 shadow-sm">
+                          <Icon className="w-7 h-7" />
+                        </div>
+                        <h3 className="text-xl font-bold text-primary-900 mb-2">{feature.title}</h3>
+                        <p className="text-sm text-slate-500 leading-relaxed">{feature.desc}</p>
+                      </div>
+                   </motion.div>
+                 )
+              })}
+            </div>
+         </div>
+
+        {/* Schema markup for AEO/SEO */}
+        <Script
+          id="schema-why-us"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ItemList",
+              "name": "Why Choose Amets Educare",
+              "itemListElement": WHY_US_FEATURES.map((feature, idx) => ({
+                "@type": "ListItem",
+                "position": idx + 1,
+                "name": feature.title,
+                "description": feature.desc
+              }))
+            })
+          }}
+        />
+       </div>
     </section>
   );
 }
@@ -671,7 +748,7 @@ function SuccessMetricsSection() {
   return (
     <section className="bg-gradient-to-b from-slate-50 to-white py-12 sm:py-20 border-b border-slate-100">
       <div className="container-premium">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8">
           {METRICS.map((metric, idx) => (
             <div key={idx} className="text-center px-2 sm:px-4 py-4 sm:py-0 border border-slate-100 sm:border-none rounded-xl sm:rounded-none bg-white sm:bg-transparent shadow-sm sm:shadow-none">
               <div className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-accent-600 mb-1 sm:mb-2 flex items-center justify-center">
