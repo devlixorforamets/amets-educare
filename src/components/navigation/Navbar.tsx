@@ -111,7 +111,7 @@ export default function Navbar() {
 
   const isActive = (path: string) => pathname?.startsWith(path);
 
-  const lightBackgroundPaths = ['/privacy-policy', '/terms-of-service', '/about-us'];
+  const lightBackgroundPaths = ['/privacy-policy', '/terms-of-service', '/about-us', '/contact-us'];
   const headerScrolled = isScrolled || lightBackgroundPaths.some(p => pathname?.startsWith(p));
 
   // Helper to chunk array for column layouts
@@ -253,12 +253,13 @@ export default function Navbar() {
               onMouseEnter={() => handleMouseEnter('colleges')}
               onMouseLeave={handleMouseLeave}
             >
-              <button 
-                className={`flex items-center gap-1.5 text-sm font-semibold tracking-wide uppercase transition-colors relative group ${isActive('/colleges') ? 'text-accent-500' : (!headerScrolled ? 'text-white' : 'text-primary-900')} hover:text-accent-500`}
+              <Link 
+                href="/colleges-universities"
+                className={`flex items-center gap-1.5 text-sm font-semibold tracking-wide uppercase transition-colors relative group ${isActive('/colleges') || isActive('/colleges-universities') ? 'text-accent-500' : (!headerScrolled ? 'text-white' : 'text-primary-900')} hover:text-accent-500`}
               >
                 <Building2 className="w-4 h-4" /> Colleges <ChevronDown className="w-4 h-4 ml-0.5" />
-                <span className={`absolute -bottom-1 left-0 h-[2px] bg-accent-500 transition-all duration-300 ${isActive('/colleges') ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
-              </button>
+                <span className={`absolute -bottom-1 left-0 h-[2px] bg-accent-500 transition-all duration-300 ${isActive('/colleges') || isActive('/colleges-universities') ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+              </Link>
 
               <AnimatePresence>
                 {activeDropdown === 'colleges' && (
