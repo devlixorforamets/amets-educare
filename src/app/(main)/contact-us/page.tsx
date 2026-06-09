@@ -22,7 +22,7 @@ export default function ContactUsPage() {
         "logo": "https://ametseducare.com/logo.png",
         "image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
         "description": "Expert admission counseling and guidance for medical, engineering, and management courses in India and abroad.",
-        "telephone": "+91-9876543210",
+        "telephone": "+91-9711290783",
         "email": "info@ametseducare.com",
         "address": {
           "@type": "PostalAddress",

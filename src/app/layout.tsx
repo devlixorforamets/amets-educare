@@ -121,7 +121,7 @@ export default function RootLayout({
     image: 'https://ametseducare.com/logo.png',
     '@id': 'https://ametseducare.com',
     url: 'https://ametseducare.com',
-    telephone: '+91-9354679830', // Update with real phone number
+    telephone: '+91-9711290783', // Update with real phone number
     email: 'info@ametseducare.com',
     address: {
       '@type': 'PostalAddress',

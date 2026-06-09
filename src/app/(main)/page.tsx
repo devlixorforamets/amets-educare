@@ -165,7 +165,7 @@ const FAQS = [
   },
   {
     question: "How do I book a counselling session with Reena Thakur?",
-    answer: "You can book a free initial consultation by filling out the contact form on our website or calling our helpline at +91-9354679830."
+    answer: "You can book a free initial consultation by filling out the contact form on our website or calling our helpline at +91-9711290783."
   }
 ];
 
@@ -417,8 +417,8 @@ function WhoWeAreSection() {
           >
             <div className="absolute inset-0 bg-gradient-to-tr from-primary-900/20 to-transparent mix-blend-multiply z-10 transition-opacity duration-500 group-hover:opacity-0"></div>
             <Image 
-              src="/images/amets-educare-reena-thakur-counselling-session.jpg" 
-              alt="Reena Thakur, Director of Amets Educare, counseling medical and engineering aspirants for MBBS, BAMS, BHMS admissions in New Delhi, India" 
+              src="/images/reena.jpg" 
+              alt="Reena Thakur - Founder and Director of Amets Educare" 
               width={800} 
               height={600} 
               className="w-full h-auto object-cover scale-[1.02] group-hover:scale-105 transition-transform duration-700 ease-in-out"
@@ -655,65 +655,155 @@ function FeaturedCoursesSection() {
 
 function StudyAbroadSection() {
   return (
-    <section id="study-abroad" className="bg-primary-900 text-white section-padding overflow-hidden relative">
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-20 hidden lg:block"></div>
+    <section id="study-abroad" className="bg-primary-900 text-white py-24 overflow-hidden relative">
+      {/* Decorative Background Elements */}
+      <div className="absolute top-0 right-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-10"></div>
+      <div className="absolute -top-[30%] -right-[10%] w-[70%] h-[100%] bg-blue-500/20 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute -bottom-[20%] -left-[10%] w-[50%] h-[80%] bg-accent-500/10 rounded-full blur-[100px] pointer-events-none"></div>
       
-      <div className="container-premium relative z-10">
+      <div className="container-premium relative z-10 px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          
+          {/* Content Left Side */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.7 }}
+            className="space-y-6"
           >
-            <span className="text-accent-500 font-bold tracking-wider uppercase text-sm mb-3 block">Study Abroad</span>
-            <h2 className="font-serif text-3xl md:text-5xl font-bold mb-6 leading-tight">
-              Pursue MBBS & Higher Education Overseas
+            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-2 rounded-full backdrop-blur-sm">
+              <span className="w-2 h-2 rounded-full bg-accent-500 animate-pulse"></span>
+              <span className="text-white font-bold tracking-widest uppercase text-xs">Best Study Abroad Consultants in India</span>
+            </div>
+            
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white drop-shadow-md">
+              Your Gateway to <br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-accent-200">Global Medical Education</span>
             </h2>
-            <p className="text-slate-300 text-lg mb-8 leading-relaxed">
-              We guide students to highly reputed, NMC-approved medical universities globally. Experience world-class infrastructure, affordable tuition, and international exposure.
+            
+            <p className="text-slate-300 text-lg md:text-xl leading-relaxed max-w-xl font-light">
+              As India's top educational consultants, we provide 100% transparent admission and visa guidance for <strong>MBBS abroad</strong>. We partner exclusively with highly reputed, NMC (MCI) & WHO approved medical universities.
             </p>
             
-            <div className="flex flex-wrap gap-4 mb-10">
-              {['Russia 🇷🇺', 'Ukraine 🇺🇦', 'Philippines 🇵🇭', 'Georgia 🇬🇪', 'Kazakhstan 🇰🇿', 'Kyrgyzstan 🇰🇬'].map(country => (
-                <span key={country} className="bg-primary-800 border border-primary-700 px-4 py-2 rounded-full text-sm font-medium">
-                  {country}
-                </span>
-              ))}
-            </div>
-
-            <Link href="/study-abroad" className="bg-accent-500 text-primary-900 font-bold px-8 py-4 rounded-full hover:bg-accent-400 hover:shadow-gold transition-all duration-300 inline-flex items-center gap-2">
-              Explore MBBS Abroad <Globe className="w-5 h-5" />
-            </Link>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative h-[500px] w-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl"
-          >
-            {/* Image Placeholder */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary-800 to-primary-950 flex items-center justify-center">
-              <div className="text-center">
-                <Globe className="w-24 h-24 text-white/20 mx-auto mb-4" />
-                <span className="text-white/50 font-mono tracking-widest text-sm">[WORLD MAP VISUAL]</span>
+            {/* SEO & AEO Target: Country List */}
+            <div className="pt-4">
+              <p className="text-sm text-slate-400 font-bold uppercase tracking-wider mb-4">Top Destinations for Indian Students:</p>
+              <div className="flex flex-wrap gap-3">
+                {[
+                  { name: 'Russia', flag: '🇷🇺', extra: 'Top NMC Approved' },
+                  { name: 'Georgia', flag: '🇬🇪', extra: 'European Standards' },
+                  { name: 'Kazakhstan', flag: '🇰🇿', extra: 'Affordable Fees' },
+                  { name: 'Uzbekistan', flag: '🇺🇿', extra: 'High FMGE Rate' },
+                  { name: 'Philippines', flag: '🇵🇭', extra: 'English Taught' },
+                  { name: 'Kyrgyzstan', flag: '🇰🇬', extra: '5-Year MBBS' }
+                ].map(country => (
+                  <div key={country.name} className="group relative bg-white/5 border border-white/10 hover:border-accent-500/50 hover:bg-white/10 px-4 py-2.5 rounded-xl transition-all duration-300 cursor-default flex items-center gap-3 overflow-hidden">
+                    <span className="text-2xl drop-shadow-sm group-hover:scale-110 transition-transform">{country.flag}</span>
+                    <div className="flex flex-col">
+                      <span className="text-white font-bold text-sm tracking-wide">{country.name}</span>
+                      <span className="text-[10px] text-accent-300 font-medium uppercase tracking-wider opacity-0 max-h-0 group-hover:max-h-10 group-hover:opacity-100 transition-all duration-300">{country.extra}</span>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
+
+            <div className="pt-8 flex flex-col sm:flex-row items-center gap-6">
+              <Link href="/study-abroad" className="w-full sm:w-auto bg-gradient-to-r from-accent-500 to-accent-400 text-primary-950 font-extrabold px-8 py-4 rounded-full hover:shadow-[0_0_20px_rgba(250,204,21,0.4)] hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2">
+                Explore MBBS Abroad <Globe className="w-5 h-5" />
+              </Link>
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-sm border border-white/20">
+                  <ShieldCheck className="w-6 h-6 text-accent-400" />
+                </div>
+                <div>
+                  <p className="text-white font-bold leading-none">100%</p>
+                  <p className="text-xs text-slate-400 font-medium uppercase mt-1">Visa Success Rate</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Visual Right Side */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="relative h-[600px] w-full rounded-[2.5rem] overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] group"
+          >
+            {/* Background Image using the existing hero_abroad.png */}
+            <Image 
+              src="/images/hero_abroad.png" 
+              alt="Indian student looking at a globe, dreaming of studying MBBS abroad in Russia and Georgia through Amets Educare" 
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-1000 ease-in-out opacity-80 mix-blend-luminosity"
+            />
             
-            {/* Floating Glass Cards */}
-            <div className="absolute top-10 left-10 bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl shadow-xl hover:bg-white/20 transition-colors cursor-pointer">
-              <p className="font-bold text-accent-400">Russia</p>
-              <p className="text-xs text-white/80">Top NMC Approved</p>
-            </div>
-            <div className="absolute bottom-20 right-10 bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl shadow-xl hover:bg-white/20 transition-colors cursor-pointer">
-              <p className="font-bold text-accent-400">Georgia</p>
-              <p className="text-xs text-white/80">European Standard</p>
-            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-primary-950 via-primary-900/40 to-transparent"></div>
+            
+            {/* Floating Trust Elements */}
+            <motion.div 
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute top-10 left-10 bg-white/10 backdrop-blur-md border border-white/20 p-5 rounded-2xl shadow-2xl"
+            >
+              <div className="flex items-center gap-4">
+                <span className="text-4xl">🎓</span>
+                <div>
+                  <p className="font-extrabold text-white text-lg drop-shadow-md">NMC & WHO</p>
+                  <p className="text-xs text-accent-400 font-medium tracking-wider uppercase">Approved Universities</p>
+                </div>
+              </div>
+            </motion.div>
+            
+            <motion.div 
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              className="absolute bottom-12 right-10 bg-primary-900/80 backdrop-blur-md border border-accent-500/30 p-5 rounded-2xl shadow-2xl"
+            >
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-accent-500/20 rounded-full flex items-center justify-center">
+                  <Globe className="w-6 h-6 text-accent-500" />
+                </div>
+                <div>
+                  <p className="font-extrabold text-white text-lg drop-shadow-md">Global Network</p>
+                  <p className="text-xs text-slate-300 font-medium tracking-wider uppercase">35+ Countries Covered</p>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>
+
+      {/* Structured Data for Study Abroad Service (AEO & GEO Optimization) */}
+      <Script
+        id="schema-study-abroad-service"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Study Abroad Consulting",
+            "provider": {
+              "@type": "EducationalOrganization",
+              "name": "Amets Educare",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Janakpuri, Delhi",
+                "addressCountry": "IN"
+              }
+            },
+            "areaServed": "India",
+            "description": "Expert admission and visa guidance for MBBS abroad in NMC & WHO approved universities across Russia, Georgia, Kazakhstan, and more.",
+            "offers": {
+              "@type": "Offer",
+              "description": "100% transparent admission guidance, profile building, university selection, and student visa assistance."
+            }
+          })
+        }}
+      />
     </section>
   );
 }
@@ -916,8 +1006,8 @@ function FinalCTASection() {
           <Link href="/contact-us" className="bg-accent-500 text-primary-900 font-bold text-base sm:text-lg px-8 sm:px-10 py-4 sm:py-5 rounded-full hover:bg-accent-400 hover:shadow-gold transition-all duration-300 w-full sm:w-auto">
             Schedule Free Counselling
           </Link>
-          <a href="tel:+919354679830" className="text-accent-400 font-semibold flex items-center justify-center hover:text-white transition-colors gap-2">
-            <PhoneCall className="w-5 h-5" /> Or call us: +91-9354679830
+          <a href="tel:+919711290783" className="text-accent-400 font-semibold flex items-center justify-center hover:text-white transition-colors gap-2">
+            <PhoneCall className="w-5 h-5" /> Or call us: +91-9711290783
           </a>
         </div>
       </div>

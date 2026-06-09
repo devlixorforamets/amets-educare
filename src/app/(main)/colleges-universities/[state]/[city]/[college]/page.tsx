@@ -66,7 +66,7 @@ export default async function CollegeDetailPage({ params }: Props) {
         url: `https://ametseducare.com/colleges-universities/${resolvedParams.state}/${resolvedParams.city}/${resolvedParams.college}`,
         logo: "https://ametseducare.com/logo.png",
         address: { streetAddress: "Campus Road", addressLocality: college.city, addressRegion: college.state, addressCountry: "IN" },
-        contactPoint: { telephone: "+91-9876543210", email: "admissions@ametseducare.com" },
+        contactPoint: { telephone: "+91-9711290783", email: "admissions@ametseducare.com" },
         sameAs: []
       })) }} />
 

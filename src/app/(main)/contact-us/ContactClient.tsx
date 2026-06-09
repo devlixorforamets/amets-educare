@@ -108,10 +108,10 @@ export default function ContactClient() {
                     <div>
                       <h3 className="text-lg font-bold text-slate-900 mb-1">Call Us</h3>
                       <p className="text-slate-600 leading-relaxed text-sm md:text-base mb-1">
-                        <span className="font-semibold text-slate-700">Counseling:</span> +91-9876543210
+                        <span className="font-semibold text-slate-700">Counseling:</span> +91-9711290783
                       </p>
                       <p className="text-slate-600 leading-relaxed text-sm md:text-base">
-                        <span className="font-semibold text-slate-700">Support:</span> +91-9876543211
+                        <span className="font-semibold text-slate-700">Support:</span> +91-9711290783
                       </p>
                     </div>
                   </div>
