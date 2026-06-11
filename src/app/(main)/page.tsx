@@ -217,7 +217,7 @@ const HERO_SLIDES = [
     secondaryAction: "Book Free Counselling",
     secondaryLink: "/contact-us",
     bgPattern: "radial-gradient(circle at 50% 50%, rgba(15, 40, 71, 1) 0%, rgba(10, 25, 47, 1) 100%)",
-    image: "/images/hero_medical.png",
+    image: "/images/hero1.jpg",
     imageAlt: "Medical student interacting with modern holographic data",
   },
   {
@@ -232,7 +232,7 @@ const HERO_SLIDES = [
     secondaryAction: "Talk to an Expert",
     secondaryLink: "/contact-us",
     bgPattern: "radial-gradient(circle at 80% 20%, rgba(30, 58, 138, 0.8) 0%, rgba(10, 25, 47, 1) 80%)",
-    image: "/images/hero_engineering.png",
+    image: "/images/hero2.jpg",
     imageAlt: "Engineering students working on advanced robotics and coding",
   },
   {
@@ -247,7 +247,7 @@ const HERO_SLIDES = [
     secondaryAction: "Get Free Assessment",
     secondaryLink: "/contact-us",
     bgPattern: "radial-gradient(circle at 20% 80%, rgba(88, 28, 135, 0.6) 0%, rgba(10, 25, 47, 1) 80%)",
-    image: "/images/hero_business.png",
+    image: "/images/hero3.jpg",
     imageAlt: "Business professional presenting charts with modern skyscraper background",
   },
   {
@@ -262,14 +262,14 @@ const HERO_SLIDES = [
     secondaryAction: "Consult Now",
     secondaryLink: "/contact-us",
     bgPattern: "radial-gradient(circle at 50% 0%, rgba(3, 105, 161, 0.7) 0%, rgba(10, 25, 47, 1) 80%)",
-    image: "/images/hero_abroad.png",
+    image: "/images/hero4.jpg",
     imageAlt: "Student exploring international education with global landmarks",
   },
   {
     id: 5,
     badge: "15+ Years of Excellence",
     title: "Trusted by ",
-    highlight: "5000+",
+    highlight: "15000+",
     subtitle: " Successful Students",
     desc: "Join our legacy of excellence. With 15+ years of experience, Amets Educare has successfully shaped the futures of thousands of students across multiple disciplines.",
     primaryAction: "Read Success Stories",
@@ -277,7 +277,7 @@ const HERO_SLIDES = [
     secondaryAction: "Start Your Journey",
     secondaryLink: "/contact-us",
     bgPattern: "radial-gradient(circle at 100% 100%, rgba(180, 83, 9, 0.5) 0%, rgba(10, 25, 47, 1) 80%)",
-    image: "/images/hero_success.png",
+    image: "/images/hero5.jpg",
     imageAlt: "Successful graduates throwing caps in joyous celebration",
   }
 ];
@@ -314,8 +314,8 @@ function HeroSection() {
             className="w-full h-full object-cover"
           />
           {/* Dark Overlay for Text Readability */}
-          <div className="absolute inset-0 bg-primary-950/75 mix-blend-multiply z-10"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-primary-900 via-primary-900/40 to-transparent z-20"></div>
+          <div className="absolute inset-0 bg-slate-950/70 z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-primary-950 via-primary-900/60 to-transparent z-20"></div>
         </motion.div>
       </AnimatePresence>
 
@@ -370,7 +370,7 @@ function HeroSection() {
         <div className="w-full max-w-3xl mx-auto border-t border-white/10 pt-6 sm:pt-8 mt-8 sm:mt-10 relative z-20 hidden md:block">
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-white/80 text-sm font-medium">
             <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-accent-500" /> 15+ Years Experience</span>
-            <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-accent-500" /> 5000+ Students Placed</span>
+            <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-accent-500" /> 15000+ Students Placed</span>
             <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-accent-500" /> 100+ Partner Colleges</span>
             <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-accent-500" /> Pan India Coverage</span>
           </div>
