@@ -230,7 +230,7 @@ export default async function CollegeDetailPage({ params }: Props) {
                   {college.courses.map(c => <option key={c} value={c}>{c}</option>)}
                 </select>
                 <button type="button" className="w-full bg-accent-500 text-primary-900 font-bold py-4 rounded-lg hover:bg-accent-400 transition-colors mt-2 shadow-md">
-                  Get Free Consultation
+                  Get Expert Guidance
                 </button>
               </form>
             </div>

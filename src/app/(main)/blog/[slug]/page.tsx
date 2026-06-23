@@ -225,7 +225,7 @@ export default async function BlogPostPage({ params }: Props) {
               <h3 className="font-serif text-xl font-bold mb-3 text-accent-500">Need Expert Guidance?</h3>
               <p className="text-sm text-slate-300 mb-6">Book a free consultation with Reena Thakur and clear all your admission doubts.</p>
               <Link href="/contact-us" className="block w-full bg-white text-primary-900 font-bold py-3 rounded-lg hover:bg-accent-500 transition-colors text-sm">
-                Book Free Consultation
+                Get Expert Guidance
               </Link>
             </div>
 

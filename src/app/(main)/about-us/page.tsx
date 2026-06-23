@@ -150,7 +150,7 @@ export default function AboutUsPage() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
             <Link href="/contact-us" className="w-full sm:w-auto bg-accent-500 text-primary-950 font-black uppercase tracking-widest text-sm px-10 py-4 rounded-full hover:bg-white transition-all shadow-[0_0_30px_rgba(250,204,21,0.3)] hover:shadow-[0_0_50px_rgba(255,255,255,0.5)] hover:-translate-y-1 flex items-center justify-center gap-2">
-              <PhoneCall className="w-4 h-4" /> Book Free Counselling
+              <PhoneCall className="w-4 h-4" /> Get Expert Guidance
             </Link>
             <Link href="/colleges-universities" className="w-full sm:w-auto bg-primary-800 text-white border border-primary-700 font-bold uppercase tracking-widest text-sm px-10 py-4 rounded-full hover:bg-primary-700 transition-all hover:-translate-y-1 flex items-center justify-center gap-2">
               <Globe2 className="w-4 h-4" /> Explore Universities

@@ -378,9 +378,7 @@ export default function Navbar() {
               href="/contact-us" 
               className="bg-accent-500 text-primary-900 font-bold uppercase tracking-wider text-sm px-6 py-2.5 rounded-full hover:bg-primary-900 hover:text-white transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2"
             >
-              <PhoneCall className="w-4 h-4" />
-              Free Counselling
-            </Link>
+              <PhoneCall className="w-4 h-4" />Get Expert Guidance</Link>
           </div>
         </div>
         </div>
@@ -541,9 +539,7 @@ export default function Navbar() {
                   className="w-full bg-accent-500 text-primary-900 font-bold uppercase tracking-wider text-center py-4 rounded-xl hover:bg-primary-900 hover:text-white transition-all duration-300 flex items-center justify-center gap-2 shadow-md"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  <PhoneCall className="w-5 h-5" />
-                  Free Counselling
-                </Link>
+                  <PhoneCall className="w-5 h-5" />Get Expert Guidance</Link>
               </div>
             </motion.div>
           </>

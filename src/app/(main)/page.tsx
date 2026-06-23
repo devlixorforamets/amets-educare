@@ -214,7 +214,7 @@ const HERO_SLIDES = [
     desc: "Expert admission guidance for MBBS, BDS, B.Tech, MBA, LLB, Nursing & more. Led by Reena Thakur, we connect aspiring students with top colleges across India and abroad.",
     primaryAction: "Explore Courses",
     primaryLink: "/courses",
-    secondaryAction: "Book Free Counselling",
+    secondaryAction: "Get Expert Guidance",
     secondaryLink: "/contact-us",
     bgPattern: "radial-gradient(circle at 50% 50%, rgba(15, 40, 71, 1) 0%, rgba(10, 25, 47, 1) 100%)",
     image: "/images/hero1.jpg",
@@ -244,7 +244,7 @@ const HERO_SLIDES = [
     desc: "Get into top-tier B-Schools. Our expert counseling ensures you choose the right MBA program to leapfrog into leadership roles across global enterprises.",
     primaryAction: "Discover MBAs",
     primaryLink: "/courses",
-    secondaryAction: "Get Free Assessment",
+    secondaryAction: "Get Expert Guidance",
     secondaryLink: "/contact-us",
     bgPattern: "radial-gradient(circle at 20% 80%, rgba(88, 28, 135, 0.6) 0%, rgba(10, 25, 47, 1) 80%)",
     image: "/images/hero3.jpg",
@@ -1004,7 +1004,7 @@ function FinalCTASection() {
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
           <Link href="/contact-us" className="bg-accent-500 text-primary-900 font-bold text-base sm:text-lg px-8 sm:px-10 py-4 sm:py-5 rounded-full hover:bg-accent-400 hover:shadow-gold transition-all duration-300 w-full sm:w-auto">
-            Schedule Free Counselling
+            Schedule Get Expert Guidance
           </Link>
           <a href="tel:+919711290783" className="text-accent-400 font-semibold flex items-center justify-center hover:text-white transition-colors gap-2">
             <PhoneCall className="w-5 h-5" /> Or call us: +91-9711290783
